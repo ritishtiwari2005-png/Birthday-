@@ -1,0 +1,3324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0,
+               maximum-scale=1.0, user-scalable=no">
+
+<title>🎀 A Little Birthday Surprise for Cutieeeee!!!!! 🎀</title>
+
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    -webkit-tap-highlight-color:transparent;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+body{
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background:#fff5f8;
+
+    color:#444;
+}
+
+
+/* =========================================================
+   FULL SCREEN PAGES
+========================================================= */
+
+.page{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100vw;
+    height:100vh;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:18px;
+
+    overflow:hidden;
+
+    animation:
+        pageIn
+        .6s
+        ease;
+
+}
+
+.page.active{
+    display:flex;
+}
+
+
+@keyframes pageIn{
+
+    from{
+        opacity:0;
+        transform:scale(.98);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   HIDDEN
+========================================================= */
+
+.hidden{
+    display:none !important;
+}
+
+
+/* =========================================================
+   GENERAL CARD
+========================================================= */
+
+.card{
+
+    width:100%;
+    max-width:620px;
+
+    background:
+        rgba(255,255,255,.96);
+
+    border-radius:30px;
+
+    padding:28px 20px;
+
+    text-align:center;
+
+    box-shadow:
+        0 20px 60px
+        rgba(0,0,0,.12);
+
+}
+
+
+/* =========================================================
+   NORMAL KITTY
+========================================================= */
+
+.kitty{
+
+    width:
+        min(230px,65vw);
+
+    max-height:300px;
+
+    object-fit:contain;
+
+    filter:
+        drop-shadow(
+            0 12px 12px
+            rgba(0,0,0,.12)
+        );
+
+}
+
+
+/* Floating kitty */
+
+.floating-kitty{
+
+    animation:
+        floatKitty
+        3s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes floatKitty{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+}
+
+
+/* =========================================================
+   SPEECH BUBBLE
+========================================================= */
+
+.speech{
+
+    background:#fff;
+
+    border:
+        2px solid
+        #ffb5c9;
+
+    border-radius:22px;
+
+    padding:15px 19px;
+
+    margin:15px auto 20px;
+
+    max-width:470px;
+
+    color:#913451;
+
+    font-size:18px;
+
+    line-height:1.5;
+
+    box-shadow:
+        0 7px 20px
+        rgba(0,0,0,.06);
+
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.main-btn{
+
+    border:none;
+
+    background:#e75480;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    padding:13px 27px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 8px 20px
+        rgba(231,84,128,.25);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+
+}
+
+
+.main-btn:hover{
+
+    transform:scale(1.05);
+
+}
+
+
+.main-btn:active{
+
+    transform:scale(.96);
+
+}
+
+
+/* =========================================================
+   PASSWORD PAGE
+========================================================= */
+
+#passwordPage{
+
+    background:
+        radial-gradient(
+            circle at top,
+            #ffffff,
+            #ffe9f1
+        );
+
+}
+
+
+.poster{
+
+    width:225px;
+
+    margin:
+        -5px
+        auto
+        18px;
+
+    padding:14px;
+
+    background:Pink;
+
+    border:
+        3px solid
+        #ffb5c9;
+
+    border-radius:16px;
+
+    transform:rotate(-2deg);
+
+    box-shadow:
+        0 10px 25px
+        rgba(0,0,0,.10);
+
+}
+
+
+.poster h1{
+
+    color:#e75480;
+
+    font-size:28px;
+
+    line-height:1.1;
+
+}
+
+
+.poster p{
+
+    font-size:13px;
+
+    color:#777;
+
+    margin-top:6px;
+
+}
+
+
+.password-row{
+
+    display:flex;
+
+    gap:8px;
+
+    max-width:430px;
+
+    margin:auto;
+
+}
+
+
+.password-row input{
+
+    flex:1;
+
+    min-width:0;
+
+    padding:13px 18px;
+
+    border:
+        2px solid
+        #ffd0dc;
+
+    border-radius:30px;
+
+    outline:none;
+
+    text-align:center;
+
+    font-size:16px;
+
+}
+
+
+.password-row input:focus{
+
+    border-color:#e75480;
+
+}
+
+
+.error{
+
+    min-height:30px;
+
+    margin-top:11px;
+
+    color:#e75480;
+
+    font-weight:bold;
+
+    font-size:16px;
+
+}
+
+
+/* =========================================================
+   FIREWORK PAGE
+========================================================= */
+
+#fireworksPage{
+
+    background:
+        radial-gradient(
+            circle at center,
+            #39395f,
+            #11111f
+        );
+
+    color:white;
+
+}
+
+
+.firework-title{
+
+    position:absolute;
+
+    top:40%;
+
+    left:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    width:100%;
+
+    text-align:center;
+
+    z-index:10;
+
+    padding:15px;
+
+}
+
+
+.firework-title h1{
+
+    font-size:
+        clamp(
+            38px,
+            10vw,
+            75px
+        );
+
+    text-shadow:
+        0 0 25px
+        #ffb4cd;
+
+    animation:
+        birthdayPulse
+        1s
+        infinite;
+
+}
+
+
+.firework-title p{
+
+    margin-top:15px;
+
+    font-size:19px;
+
+}
+
+
+@keyframes birthdayPulse{
+
+    50%{
+        transform:scale(1.08);
+    }
+
+}
+
+
+/* =========================================================
+   FIREWORK ROCKET
+========================================================= */
+
+.firework{
+
+    position:absolute;
+
+    bottom:-20px;
+
+    width:5px;
+    height:5px;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:
+        0 0 8px white;
+
+    animation:
+        fireworkShoot
+        1.15s
+        linear
+        forwards;
+
+}
+
+
+@keyframes fireworkShoot{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    100%{
+
+        transform:
+            translateY(-70vh);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* =========================================================
+   BIGGER FIREWORK EXPLOSION
+========================================================= */
+
+.explosion{
+
+    position:absolute;
+
+    width:6px;
+    height:6px;
+
+    border-radius:50%;
+
+    background:white;
+
+    animation:
+        explode
+        1.1s
+        ease-out
+        forwards;
+
+}
+
+
+@keyframes explode{
+
+    0%{
+
+        opacity:1;
+
+        transform:scale(.5);
+
+        box-shadow:
+            0 0 8px white;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:scale(1);
+
+        box-shadow:
+
+            0 -120px 0 #ff6b9a,
+
+            85px -85px 0 #ffd166,
+
+            120px 0 0 white,
+
+            85px 85px 0 #7bdff2,
+
+            0 120px 0 #ff6b9a,
+
+            -85px 85px 0 #ffd166,
+
+            -120px 0 0 white,
+
+            -85px -85px 0 #7bdff2;
+
+    }
+
+}
+
+
+/* =========================================================
+   KITTY WALK PAGE
+========================================================= */
+
+#handsPage{
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff7fa,
+            #ffeaf1
+        );
+
+}
+
+
+.kitty-walk-screen{
+
+    width:100%;
+    height:100%;
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    overflow:hidden;
+
+}
+
+
+/* =========================================================
+   WALKING KITTY CANVAS
+========================================================= */
+
+.walking-kitty{
+
+    width:
+        min(230px,60vw);
+
+    height:auto;
+
+    position:absolute;
+
+    left:-250px;
+
+    bottom:-30px;
+
+    object-fit:contain;
+
+    background:transparent;
+
+    filter:
+        drop-shadow(
+            0 12px 12px
+            rgba(0,0,0,.12)
+        );
+
+    animation:
+        kittyWalkFromCorner
+        4.5s
+        cubic-bezier(.22,.61,.36,1)
+        forwards;
+
+    pointer-events:none;
+
+}
+
+
+/* =========================================================
+   WALKING ANIMATION
+========================================================= */
+
+@keyframes kittyWalkFromCorner{
+
+    0%{
+
+        left:-250px;
+
+        bottom:-30px;
+
+        transform:
+            rotate(-12deg)
+            scale(.82);
+
+    }
+
+    10%{
+
+        transform:
+            rotate(10deg)
+            scale(.86);
+
+    }
+
+    20%{
+
+        transform:
+            rotate(-9deg)
+            scale(.90);
+
+    }
+
+    30%{
+
+        transform:
+            rotate(8deg)
+            scale(.94);
+
+    }
+
+    40%{
+
+        transform:
+            rotate(-7deg)
+            scale(.97);
+
+    }
+
+    50%{
+
+        transform:
+            rotate(6deg)
+            scale(1);
+
+    }
+
+    60%{
+
+        transform:
+            rotate(-5deg)
+            scale(1);
+
+    }
+
+    70%{
+
+        transform:
+            rotate(4deg)
+            scale(1);
+
+    }
+
+    82%{
+
+        transform:
+            rotate(-2deg)
+            scale(1);
+
+    }
+
+    100%{
+
+        left:50%;
+
+        bottom:44%;
+
+        transform:
+            translateX(-50%)
+            rotate(0deg)
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   EXTRA WALKING BOUNCE
+========================================================= */
+
+.walking-kitty.walking{
+
+    animation:
+        kittyWalkBounce
+        .38s
+        ease-in-out
+        infinite alternate;
+
+}
+
+
+@keyframes kittyWalkBounce{
+
+    from{
+
+        margin-bottom:0;
+
+    }
+
+    to{
+
+        margin-bottom:8px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SPEECH COMES AFTER KITTY
+========================================================= */
+
+.walking-speech{
+
+    position:absolute;
+
+    bottom:19%;
+
+    width:
+        min(90%,500px);
+
+    opacity:0;
+
+    transform:
+        translateY(20px)
+        scale(.95);
+
+    animation:
+        speechAppear
+        .8s
+        ease
+        3.7s
+        forwards;
+
+}
+
+
+@keyframes speechAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(20px)
+            scale(.95);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   MEMORY BUTTONS
+========================================================= */
+
+.memory-choice{
+
+    position:absolute;
+
+    bottom:7%;
+
+    display:flex;
+
+    gap:12px;
+
+    opacity:0;
+
+    animation:
+        choicesAppear
+        .8s
+        ease
+        4.7s
+        forwards;
+
+}
+
+
+@keyframes choicesAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+.choice-btn{
+
+    border:none;
+
+    padding:
+        12px
+        26px;
+
+    border-radius:30px;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+
+
+.yes-btn{
+
+    background:#e75480;
+
+    color:white;
+
+    box-shadow:
+        0 7px 20px
+        rgba(231,84,128,.22);
+
+}
+
+
+.no-btn{
+
+    background:white;
+
+    color:#e75480;
+
+    border:
+        2px solid
+        #e75480;
+
+    position:relative;
+
+    transition:
+        transform .25s ease;
+
+}
+
+
+/* =========================================================
+   PAW PRINTS
+========================================================= */
+
+.paw{
+
+    position:absolute;
+
+    font-size:25px;
+
+    opacity:0;
+
+    animation:
+        pawPop
+        1.5s
+        ease-in-out
+        infinite;
+
+}
+
+
+.paw1{
+
+    left:16%;
+    bottom:21%;
+
+}
+
+
+.paw2{
+
+    left:24%;
+    bottom:16%;
+
+    animation-delay:.5s;
+
+}
+
+
+@keyframes pawPop{
+
+    0%,100%{
+
+        opacity:0;
+
+        transform:
+            translateY(0);
+
+    }
+
+    50%{
+
+        opacity:.7;
+
+        transform:
+            translateY(-8px);
+
+    }
+
+}
+
+
+/* =========================================================
+   PHOTO PAGE
+========================================================= */
+
+#photoPage{
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff7fa,
+            #f7f0ff
+        );
+
+}
+
+
+.photo-wrapper{
+
+    width:100%;
+
+    max-width:700px;
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+.photo-title{
+
+    color:#e75480;
+
+    margin-bottom:10px;
+
+    font-size:24px;
+
+}
+
+
+.photo-card{
+
+    width:100%;
+
+    max-height:
+        calc(100vh - 145px);
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:10px;
+
+    box-shadow:
+        0 15px 45px
+        rgba(0,0,0,.12);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+
+.story-image{
+
+    width:100%;
+
+    max-height:55vh;
+
+    object-fit:contain;
+
+    border-radius:18px;
+
+    background:#f5f5f5;
+
+}
+
+
+/* =========================================================
+   PHOTO ENTER ANIMATION
+========================================================= */
+
+.photo-enter{
+
+    animation:
+        photoCuteEnter
+        .65s
+        cubic-bezier(.22,.61,.36,1);
+
+}
+
+
+@keyframes photoCuteEnter{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+            scale(.88)
+            rotate(-2deg)
+            translateY(12px);
+
+    }
+
+    45%{
+
+        opacity:1;
+
+        transform:
+            scale(1.03)
+            rotate(1deg)
+            translateY(-3px);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:
+            scale(1)
+            rotate(0)
+            translateY(0);
+
+    }
+
+}
+
+
+.caption{
+
+    margin-top:10px;
+
+    padding:12px;
+
+    background:#fff2f6;
+
+    border-radius:16px;
+
+    color:#913451;
+
+    font-size:16px;
+
+    line-height:1.4;
+
+}
+
+
+.story-bottom{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    margin-top:9px;
+
+}
+
+
+.story-speech{
+
+    font-size:14px;
+
+    color:#913451;
+
+    margin-bottom:8px;
+
+    text-align:center;
+
+}
+
+
+.story-buttons{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+
+.story-buttons button{
+
+    border:none;
+
+    background:#e75480;
+
+    color:white;
+
+    border-radius:25px;
+
+    padding:10px 22px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+
+
+/* =========================================================
+   MESSAGE INTRO
+========================================================= */
+
+#messageIntroPage{
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff8fb,
+            #f8efff
+        );
+
+}
+
+
+/* =========================================================
+   MESSAGE PAGE
+========================================================= */
+
+#messagePage{
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff8fb,
+            #f6efff
+        );
+
+}
+
+
+.message-card{
+
+    max-width:750px;
+
+    max-height:
+        calc(100vh - 36px);
+
+    overflow-y:auto;
+
+}
+
+
+.message-card::-webkit-scrollbar{
+
+    width:5px;
+
+}
+
+
+.message-paper{
+
+    margin-top:15px;
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:28px;
+
+    text-align:left;
+
+    box-shadow:
+        inset 0 0 0 1px
+        #f1dce4;
+
+}
+
+
+.typed-message{
+
+    font-size:17px;
+
+    line-height:1.8;
+
+    white-space:pre-line;
+
+}
+
+
+.continue-btn{
+
+    margin-top:20px;
+
+}
+
+
+/* =========================================================
+   FINAL PAGE
+========================================================= */
+
+#finalPage{
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff7fa,
+            #f4edff
+        );
+
+}
+
+
+.final-card{
+
+    max-width:620px;
+
+}
+
+
+.final-button-area{
+
+    height:130px;
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+.final-btn{
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#e75480;
+
+    color:white;
+
+    padding:14px 25px;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:
+        transform .35s ease;
+
+}
+
+
+.final-result{
+
+    display:none;
+
+}
+
+
+.final-result.show{
+
+    display:block;
+
+    animation:
+        pageIn
+        .8s
+        ease;
+
+}
+
+
+.final-result h2{
+
+    color:#e75480;
+
+    margin-bottom:15px;
+
+}
+
+
+.final-result p{
+
+    font-size:17px;
+
+    line-height:1.7;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:600px){
+
+    .page{
+
+        padding:12px;
+
+    }
+
+
+    .card{
+
+        padding:
+            21px
+            14px;
+
+        border-radius:25px;
+
+    }
+
+
+    .kitty{
+
+        width:
+            min(200px,62vw);
+
+    }
+
+
+    .poster{
+
+        width:205px;
+
+    }
+
+
+    .speech{
+
+        font-size:16px;
+
+        padding:
+            13px
+            15px;
+
+    }
+
+
+    .password-row{
+
+        flex-direction:column;
+
+    }
+
+
+    .password-row button{
+
+        width:100%;
+
+    }
+
+
+    .walking-kitty{
+
+        width:
+            min(205px,58vw);
+
+    }
+
+
+    .walking-speech{
+
+        bottom:19%;
+
+    }
+
+
+    .memory-choice{
+
+        bottom:6%;
+
+    }
+
+
+    .choice-btn{
+
+        padding:
+            11px
+            22px;
+
+    }
+
+
+    .photo-title{
+
+        font-size:20px;
+
+    }
+
+
+    .photo-card{
+
+        max-height:
+            calc(100vh - 125px);
+
+    }
+
+
+    .story-image{
+
+        max-height:47vh;
+
+    }
+
+
+    .caption{
+
+        font-size:14px;
+
+        padding:9px;
+
+    }
+
+
+    .story-speech{
+
+        font-size:13px;
+
+    }
+
+
+    .story-buttons button{
+
+        padding:
+            9px
+            18px;
+
+    }
+
+
+    .message-paper{
+
+        padding:20px;
+
+    }
+
+
+    .typed-message{
+
+        font-size:15px;
+
+        line-height:1.7;
+
+    }
+
+
+    .final-result p{
+
+        font-size:15px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     1. PASSWORD PAGE
+===================================================== -->
+
+<section
+    id="passwordPage"
+    class="page active">
+
+
+    <div class="card">
+
+
+        <img
+            src="kitty.jfif"
+            class="kitty floating-kitty"
+            alt="Cute Kitty">
+
+
+        <div class="poster">
+
+            <h1>
+                🎀 HAPPY<br>
+                BIRTHDAY Betuuuuuuuuu!!!!! 🎂
+            </h1>
+
+            <p>
+                A little surprise is waiting for youuuuuuuuu...
+            </p>
+
+        </div>
+
+
+        <div class="speech">
+
+            Hmmm you are here... 👀
+
+            <br>
+
+            Something special is waiting for you meri baccchhuuuuu!!!!...
+
+            <br><br>
+
+            But first...
+
+            <br>
+
+            <b>Enter your password (hehehehehehehe) 🔐</b>
+
+        </div>
+
+
+        <div class="password-row">
+
+            <input
+                id="passwordInput"
+                type="password"
+                placeholder="Enter password"
+                autocomplete="off">
+
+
+            <button
+                class="main-btn"
+                onclick="checkPassword()">
+
+                Enter 🔐
+
+            </button>
+
+        </div>
+
+
+        <div
+            id="passwordError"
+            class="error">
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     2. FIREWORKS PAGE
+===================================================== -->
+
+<section
+    id="fireworksPage"
+    class="page">
+
+
+    <div class="firework-title">
+
+        <h1>
+            🎉 HAPPY BIRTHDAY PIYUUUUUUUUUUUU !!!!! 🎉
+        </h1>
+
+        <p>
+            YAYYYYYYYYYYYYYY!!!!! 🥳
+        </p>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     3. KITTY WALKS FROM CORNER
+===================================================== -->
+
+<section
+    id="handsPage"
+    class="page">
+
+
+    <div class="kitty-walk-screen">
+
+
+        <span class="paw paw1">
+            🐾
+        </span>
+
+
+        <span class="paw paw2">
+            🐾
+        </span>
+
+
+        <!--
+            Canvas is used so the pink background
+            of kitty.jfif can be removed automatically.
+        -->
+
+        <canvas
+            id="walkingKittyCanvas"
+            class="walking-kitty">
+        </canvas>
+
+
+        <div
+            class="walking-speech speech">
+
+            Hiiiiii Bacchhhuuuuu!!!!... 🎀
+
+            <br><br>
+
+            Come hereee give me your hands...
+
+            <br>
+
+            Wanna see some memories
+            of a cutieeeee ? 🥹
+
+        </div>
+
+
+        <div class="memory-choice">
+
+
+            <button
+                class="choice-btn yes-btn"
+                onclick="chooseYes()">
+
+                YES 🥹
+
+            </button>
+
+
+            <button
+                class="choice-btn no-btn"
+                id="noButton"
+                onclick="runAwayNo()">
+
+                NO 😐
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     4. PHOTO STORY
+===================================================== -->
+
+<section
+    id="photoPage"
+    class="page">
+
+
+    <div class="photo-wrapper">
+
+
+        <h2 class="photo-title">
+
+            📖 Little Memory Story
+
+        </h2>
+
+
+        <div class="photo-card">
+
+
+            <img
+                id="storyImage"
+                class="story-image"
+                src="Image 1.jfif"
+                alt="Memory">
+
+
+            <div
+                id="storyCaption"
+                class="caption">
+
+            </div>
+
+
+        </div>
+
+
+        <div class="story-bottom">
+
+
+            <div
+                id="storySpeech"
+                class="story-speech">
+
+            </div>
+
+
+            <div class="story-buttons">
+
+
+                <button
+                    onclick="previousPhoto()">
+
+                    ← Back
+
+                </button>
+
+
+                <button
+                    onclick="nextPhoto()">
+
+                    Next →
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     5. MESSAGE INTRO
+===================================================== -->
+
+<section
+    id="messageIntroPage"
+    class="page">
+
+
+    <div class="card">
+
+
+        <img
+            src="kitty.jfif"
+            class="kitty floating-kitty"
+            alt="Kitty">
+
+
+        <div class="speech">
+
+            Awwwwwwww... 🥹
+
+            <br><br>
+
+            We have seen all the memories!
+
+            <br><br>
+
+            Now let's go to see...
+
+            <br>
+
+            <b>the message from your one n only bestest friend Ritisssssssss... 👀</b>
+
+        </div>
+
+
+        <button
+            class="main-btn"
+            onclick="openMessage()">
+
+            Let's Go 🎀
+
+        </button>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     6. MESSAGE PAGE
+===================================================== -->
+
+<section
+    id="messagePage"
+    class="page">
+
+
+    <div class="card message-card">
+
+
+        <img
+            src="kitty.jfif"
+            class="kitty"
+            style="width:130px;"
+            alt="Kitty">
+
+
+        <div class="speech">
+
+            Okieeeeeeee...
+
+            <br>
+
+            Ritissssssss has something to say......
+
+        </div>
+
+
+        <div class="message-paper">
+
+
+            <div
+                id="typedMessage"
+                class="typed-message">
+
+            </div>
+
+
+        </div>
+
+
+        <button
+            id="messageContinue"
+            class="main-btn continue-btn hidden"
+            onclick="openFinalPage()">
+
+            One Last Surpriseeeeeee 🎁
+
+        </button>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     7. FINAL SURPRISE
+===================================================== -->
+
+<section
+    id="finalPage"
+    class="page">
+
+
+    <div class="card final-card">
+
+
+        <img
+            src="kitty.jfif"
+            class="kitty"
+            style="width:150px;"
+            alt="Kitty">
+
+
+        <h2
+            style="
+                color:#e75480;
+                margin-top:10px;
+            ">
+
+            🎁 One Last Surpriseeeeee
+
+        </h2>
+
+
+        <div class="speech">
+
+            There's one last thing...
+
+            <br><br>
+
+            But but but but Don't click haannnnnnn...
+
+            <br>
+
+            <b>Don't click it. 👀</b>
+
+        </div>
+
+
+        <div class="final-button-area">
+
+
+            <button
+                id="finalButton"
+                class="final-btn"
+                onclick="finalClick()">
+
+                Don't Click This 👀
+
+            </button>
+
+
+        </div>
+
+
+        <div
+            id="finalResult"
+            class="final-result">
+
+
+            <h2>
+                Okieee bacchuuuuuuuuu!!!! 🫣
+            </h2>
+
+
+            <p>
+
+                Fineeee! 😂
+
+                <br><br>
+
+                Mmmmm.... toh yr chhotu sa Birthday message end ho gya...🥹
+
+                <br><br>
+
+                I hope this little surprise
+                made you smile and gave you
+                some really nice memories.
+
+                <br><br>
+
+                Wishing you a year full of
+                happiness, success, laughter
+                and lots of amazing moments (With me also).
+
+                <br><br>
+
+                Keep being the same Cutieeeeee bacchhuuuu you are. 😂
+
+                <br><br>
+
+                Okieeeeee baccchhuuuuuuuu!!!!!
+
+                <br>
+
+                We already have enough
+                boring people in the world (For Eg ME). 😭
+
+                <br><br>
+
+                Have an absolutely amazing
+                birthday Betuuuuuuu! 🎂🥳
+
+                <br><br>
+
+                Ofocurse ham milne wale hai toh acchhaaa hi hoga. 😂
+
+                <br><br>
+
+                🎀✨🎉
+
+                <br><br>
+
+                <b>Happy Birthday once again!!!!!!</b>
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<script>
+
+
+/* =========================================================
+   PAGE SWITCHER
+========================================================= */
+
+function showPage(pageId){
+
+    document
+        .querySelectorAll(".page")
+        .forEach(function(page){
+
+            page.classList.remove("active");
+
+        });
+
+
+    document
+        .getElementById(pageId)
+        .classList.add("active");
+
+}
+
+
+/* =========================================================
+   PASSWORD
+========================================================= */
+
+const correctPassword = "20092005";
+
+let wrongAttempts = 0;
+
+
+const wrongMessages = [
+
+    "Kyaa yaarr bacchchu... 🥺",
+
+    "Arehhhhh!!!! 😭",
+
+    "Reallyyyyyy piyuuuuu!!!! 😭"
+
+];
+
+
+function checkPassword(){
+
+    const input =
+        document.getElementById(
+            "passwordInput"
+        );
+
+
+    const error =
+        document.getElementById(
+            "passwordError"
+        );
+
+
+    if(
+        input.value ===
+        correctPassword
+    ){
+
+        error.innerHTML =
+            "Good Gurllllll! 🎉";
+
+
+        input.disabled = true;
+
+
+        startFireworks();
+
+    }
+
+    else{
+
+        wrongAttempts++;
+
+
+        if(
+            wrongAttempts <= 3
+        ){
+
+            error.innerHTML =
+                wrongMessages[
+                    wrongAttempts - 1
+                ];
+
+        }
+
+        else{
+
+            error.innerHTML =
+                "Bas bas... ab sahi password daalo 😂🥺";
+
+        }
+
+
+        input.value = "";
+
+        input.focus();
+
+    }
+
+}
+
+
+/* =========================================================
+   ENTER KEY
+========================================================= */
+
+document
+    .getElementById("passwordInput")
+    .addEventListener(
+        "keydown",
+        function(e){
+
+            if(
+                e.key === "Enter"
+            ){
+
+                checkPassword();
+
+            }
+
+        }
+    );
+
+
+/* =========================================================
+   FIREWORKS - 15 SECONDS
+========================================================= */
+
+function startFireworks(){
+
+    showPage(
+        "fireworksPage"
+    );
+
+
+    /*
+       More frequent fireworks
+    */
+
+    const rocketTimer =
+        setInterval(
+            launchFirework,
+            300
+        );
+
+
+    /*
+       Fireworks continue for 10 seconds
+    */
+
+    setTimeout(
+        function(){
+
+            clearInterval(
+                rocketTimer
+            );
+
+
+            showPage(
+                "handsPage"
+            );
+
+
+            /*
+               Prepare walking kitty
+            */
+
+            prepareWalkingKitty();
+
+
+        },
+        10000
+    );
+
+}
+
+
+/* =========================================================
+   FIREWORK ROCKET
+========================================================= */
+
+function launchFirework(){
+
+    const page =
+        document.getElementById(
+            "fireworksPage"
+        );
+
+
+    const firework =
+        document.createElement(
+            "div"
+        );
+
+
+    firework.className =
+        "firework";
+
+
+    firework.style.left =
+        (
+            8 +
+            Math.random()*84
+        )
+        +
+        "%";
+
+
+    page.appendChild(
+        firework
+    );
+
+
+    setTimeout(
+        function(){
+
+            const rect =
+                firework.getBoundingClientRect();
+
+
+            createExplosion(
+                rect.left,
+                rect.top
+            );
+
+
+            firework.remove();
+
+        },
+        1050
+    );
+
+}
+
+
+/* =========================================================
+   FIREWORK EXPLOSION
+========================================================= */
+
+function createExplosion(
+    x,
+    y
+){
+
+    const page =
+        document.getElementById(
+            "fireworksPage"
+        );
+
+
+    const explosion =
+        document.createElement(
+            "div"
+        );
+
+
+    explosion.className =
+        "explosion";
+
+
+    explosion.style.left =
+        x + "px";
+
+
+    explosion.style.top =
+        y + "px";
+
+
+    page.appendChild(
+        explosion
+    );
+
+
+    setTimeout(
+        function(){
+
+            explosion.remove();
+
+        },
+        1400
+    );
+
+}
+
+
+/* =========================================================
+   WALKING KITTY
+   REMOVE PINK BACKGROUND
+========================================================= */
+
+let kittyCanvasReady = false;
+
+
+function prepareWalkingKitty(){
+
+    const canvas =
+        document.getElementById(
+            "walkingKittyCanvas"
+        );
+
+
+    const ctx =
+        canvas.getContext(
+            "2d"
+        );
+
+
+    const img =
+        new Image();
+
+
+    img.onload =
+        function(){
+
+            /*
+               Keep the original aspect ratio.
+            */
+
+            const maxWidth =
+                window.innerWidth <= 600
+                ? 205
+                : 230;
+
+
+            const ratio =
+                img.height /
+                img.width;
+
+
+            const width =
+                Math.min(
+                    maxWidth,
+                    window.innerWidth * .60
+                );
+
+
+            const height =
+                width * ratio;
+
+
+            canvas.width =
+                width;
+
+
+            canvas.height =
+                height;
+
+
+            /*
+               Draw original image.
+            */
+
+            ctx.clearRect(
+                0,
+                0,
+                width,
+                height
+            );
+
+
+            ctx.drawImage(
+                img,
+                0,
+                0,
+                width,
+                height
+            );
+
+
+            /*
+               Read all pixels.
+            */
+
+            const imageData =
+                ctx.getImageData(
+                    0,
+                    0,
+                    width,
+                    height
+                );
+
+
+            const data =
+                imageData.data;
+
+
+            /*
+               Your uploaded kitty has
+               a pink background.
+
+               Remove pixels that are
+               close to that pink shade.
+            */
+
+            for(
+                let i = 0;
+                i < data.length;
+                i += 4
+            ){
+
+                const r = data[i];
+
+                const g = data[i + 1];
+
+                const b = data[i + 2];
+
+
+                /*
+                   Detect pink background.
+
+                   This threshold is deliberately
+                   slightly broad so the background
+                   disappears cleanly.
+                */
+
+                const isPinkBackground =
+                    r > 220 &&
+                    g > 150 &&
+                    g < 225 &&
+                    b > 160 &&
+                    b < 225 &&
+                    r > g + 20;
+
+
+                if(
+                    isPinkBackground
+                ){
+
+                    data[i + 3] = 0;
+
+                }
+
+            }
+
+
+            ctx.putImageData(
+                imageData,
+                0,
+                0
+            );
+
+
+            kittyCanvasReady = true;
+
+
+            /*
+               Start subtle walking bounce
+               after the main entrance.
+            */
+
+            setTimeout(
+                function(){
+
+                    canvas.classList.add(
+                        "walking"
+                    );
+
+                },
+                4500
+            );
+
+        };
+
+
+    img.src =
+        "kitty.jfif";
+
+}
+
+
+/* =========================================================
+   MEMORY YES
+========================================================= */
+
+function chooseYes(){
+
+    showPage(
+        "photoPage"
+    );
+
+
+    currentPhoto = 1;
+
+
+    showPhoto();
+
+}
+
+
+/* =========================================================
+   MEMORY NO - RUN AWAY
+========================================================= */
+
+function runAwayNo(){
+
+    const button =
+        document.getElementById(
+            "noButton"
+        );
+
+
+    const maxX =
+        Math.min(
+            150,
+            window.innerWidth / 2 - 65
+        );
+
+
+    const x =
+        Math.random() *
+        maxX *
+        2 -
+        maxX;
+
+
+    const y =
+        Math.random() *
+        90 -
+        45;
+
+
+    button.style.transform =
+        `translate(${x}px,${y}px)`;
+
+
+    const messages = [
+
+        "Na na na na na 😭",
+
+        "Nooooo 😭",
+
+        "Nahi nahi 😂",
+
+        "Try again! ",
+
+        "plsssssss noooooooo",
+
+        "Hehehehe 😭"
+
+    ];
+
+
+    button.innerHTML =
+        messages[
+            Math.floor(
+                Math.random() *
+                messages.length
+            )
+        ];
+
+}
+
+
+/* =========================================================
+   PHOTO STORY
+========================================================= */
+
+let currentPhoto = 1;
+
+
+const captions = [
+
+"Look at this beautiful flower... ahhaa, I'm not talking about the white on your head, cutuuuuuu... 👀",
+
+"Okieeeeeeeeee!!!! This one is actually so cuteeeeeeeee. 🥹",
+
+"This is something which I will never forget, hannnnnnnn!!!!! This moment will always have a special place in my heart. 🎀",
+
+"The perfect smile, as always... and honestly, I don't think I could ever get tired of looking at this smile. 🥹",
+
+"Still one of those moments worth remembering, like..... kya image hai yaarrrrr, how can I even define the beauty of this image, haannnnn!!! ✨",
+
+"Okay cutieee, explain this oneee.... this is so so so perfect, like like ek apsara yaarrrr!! 🥹 Seriously, how can someone look this beautiful?",
+
+"Similar..... but a very important piece of the photo collection. 💕 Some pictures may look similar, but this one will always be special.",
+
+"Ahhhhh!!!!! Look at this, betuuuuuuuuu.... I don't even know what to say, you look sooooo cute here. 🥹",
+
+"Mmm... once again I can see some flowers hannnn... but the most beautiful one is looking at me.(hehehehe)",
+
+"Do you remember this day.... Ahhhhh!!! Kaise bhool sakte hai bhai, 2nd time we met and that perfect black T-shirt, and just an amazing cuteeee girl with me.... honestly, this memory will always be special to me. 🥹",
+
+"One more memory for the collection. 🎀 And one more moment that I know I'll always love looking back at.",
+
+"Okieeeeeeee, this one is definitely staying here. 🥹 Because some pictures are just too precious to leave out.",
+
+"Some moments just become memories automatically..... By the way, tu sach me mere saath jachti hai. ✨ Like, there is just something about us in this image that I really really love.",
+
+"Iski tareef baaki thi na.... Yk, when I saw this image, actually I had already shown you on that day, in the same dress, and I'm like.... how can I explain that you are looking so so so so so beautiful? And in this image, you really look like pari yaarrrr..... 🥹 I honestly don't know how to put that beauty into words.",
+
+"One more cutieeee pic haannn..... 🥹 And honestly, every time I look at this one, I just end up smiling.",
+
+"Ahhhhhh!!!!! Bhai tu kitni mast dikhti hai, kya batau tujhe, like tere hairs and jo reaction diya hai apne image me, ahaaaa..... 🥹 Everything about this picture is just so youuuuu.",
+
+"Sooooooooooooo Cuuteeeeeeeeee!!!! Meri butterflyyyyyyyyy🥹 You really don't understand how cute you look here.",
+
+"AHHHH!!!!! You will be like, 'ye photo yaha kyun dala, isme meri aankhein band hai hannn....' but just look at you bhai, aankhein band hote hue bhi shining like a star.... ✨ That's how beautiful you are.",
+
+"And here we are... Of course ye image toh honi hi thi, bacchhuuuuuu, meri all-time fav jo hai!!!! 🥹🎀 This one will always be special to me, no matter how many pictures we collect."
+
+];
+
+
+const kittyMessages = [
+
+    "Hehehe... remember this? 👀",
+
+    "Awww look at youuu. 🥹",
+
+    "Okay okay, this one is cute. 🎀",
+
+    "Don't pretend you forgot this! 😂",
+
+    "I definitely remember this one! 😭",
+
+    "Next oneee? 👀",
+
+    "More memories incoming... 🎉",
+
+    "Okayyy keep going! 🥹",
+
+    "This is getting good! 😂",
+
+    "Another one! 👉",
+
+    "Hehehe... next! 🎀",
+
+    "Still with me? 👀",
+
+    "Keep goinggg! 🥳",
+
+    "Okay, this one has a story. 😂",
+
+    "Almost at the end! 🥹",
+
+    "Just a few more! ✨",
+
+    "Don't stop now! 😭",
+
+    "One more! 👀",
+
+    "Last oneee! 🎉"
+
+];
+
+
+function showPhoto(){
+
+    const image =
+        document.getElementById(
+            "storyImage"
+        );
+
+
+    image.classList.remove(
+        "photo-enter"
+    );
+
+
+    void image.offsetWidth;
+
+
+    image.src =
+        "Image "
+        +
+        currentPhoto
+        +
+        ".jfif";
+
+
+    image.classList.add(
+        "photo-enter"
+    );
+
+
+    document
+        .getElementById(
+            "storyCaption"
+        )
+        .innerHTML =
+            captions[
+                currentPhoto - 1
+            ];
+
+
+    document
+        .getElementById(
+            "storySpeech"
+        )
+        .innerHTML =
+            kittyMessages[
+                currentPhoto - 1
+            ];
+
+}
+
+
+/* =========================================================
+   NEXT PHOTO
+========================================================= */
+
+function nextPhoto(){
+
+    if(
+        currentPhoto < 19
+    ){
+
+        currentPhoto++;
+
+        showPhoto();
+
+    }
+
+    else{
+
+        showPage(
+            "messageIntroPage"
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   PREVIOUS PHOTO
+========================================================= */
+
+function previousPhoto(){
+
+    if(
+        currentPhoto > 1
+    ){
+
+        currentPhoto--;
+
+        showPhoto();
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE SWIPE
+========================================================= */
+
+let touchStartX = 0;
+
+let touchEndX = 0;
+
+
+const photoPage =
+    document.getElementById(
+        "photoPage"
+    );
+
+
+photoPage.addEventListener(
+    "touchstart",
+    function(e){
+
+        touchStartX =
+            e.changedTouches[0]
+             .screenX;
+
+    },
+    {
+        passive:true
+    }
+);
+
+
+photoPage.addEventListener(
+    "touchend",
+    function(e){
+
+        touchEndX =
+            e.changedTouches[0]
+             .screenX;
+
+        handleSwipe();
+
+    },
+    {
+        passive:true
+    }
+);
+
+
+function handleSwipe(){
+
+    const distance =
+        touchEndX -
+        touchStartX;
+
+
+    if(
+        Math.abs(distance) < 50
+    ){
+
+        return;
+
+    }
+
+
+    /*
+       Swipe LEFT = NEXT
+    */
+
+    if(
+        distance < 0
+    ){
+
+        nextPhoto();
+
+    }
+
+
+    /*
+       Swipe RIGHT = BACK
+    */
+
+    else{
+
+        previousPhoto();
+
+    }
+
+}
+
+
+/* =========================================================
+   PERSONAL MESSAGE
+========================================================= */
+
+const personalMessage = `
+
+Dear Piyuuuuuuuuu,
+
+Happppppyyyyyyyy Birthdayyyyyy meri laddooooooo (Piyuuuuuu 🌸) 🎂🎉🥳🥳
+
+Mmm..... So, from where should I start, haannnn?? 😭 Don't worry, this message is not going to be that long... 😂
+
+First of all, I'm sooo sooryyy 😬 I know this site is not actually that good... But yk, I don't know anything about HTML and all... I've just tried making something like this for the first time with the help of AI 😭😂 So, sorryyyyy for thatttt... Okieieee, leave itt... 😂
+(Baki you asked me na daily kaha busy hai...bas yhi busy tha 😂)
+
+Let's talk about the birthday girlllll nowww... 😁💓
+
+Okayyy, so it's been 3 years, ig... Actually, the first time you came to GMJ, I was there to celebrate with you. The second time, unfortunately, I wasn't there... and nowww, this is the 3rd time. 🫣🥺
+
+So first of all, the happiesttttt birthday to youuuuuuu!!! 🎂🥳🌸
+
+And whyyyyy don't you want to celebrate, hannnn???? 😭
+
+It's literally the perfect day because, on this day, a veryyyyy special girl was born. A girl who is hardworking, veryyyyy cuteeee, extremely sweet, lovely, smart, beautifulllll... and honestly, just PERFECT in her own little way. 🥺🌸
+
+And you know what? Sometimes you probably don't even realise how lovely you actually are. The way you smile, the way you talk, the way you get excited about little things, the way you care about people (me)... all these tiny things make you even more special. 🥹💗
+
+And today, I just want you to forget all the worries, all the overthinking and everything else for a while. Today is YOUR dayyyyy. So smile as much as you can, laugh as loudly as you want, wear something beautiful, click a million pictures, eat your favourite things, enjoy every little moment and most importantly........BE HAPPY ( and mujhe photos bhi bhej dena 😁).
+
+And haannnnnn... one more thinggggg....
+
+Today you are officially allowed to feel like the most important person in the world... because today is the day the world got its own little Piyuuuuuu (I want to write mine but someone once said you can't say mine 😁😂)...
+
+So wear those fantastic clothes, look as pretty as you possibly can (although I know you don't really need to try 😭), enjoy your dayyyyy.....
+
+Once again, Happiesttttt Birthdayyyyyy meri laddooooooo!!! 🎂🥳
+
+Keep smiling that beautiful smile, keep being the sweet, cute, caring and slightly bacchhuuuuuu Piyuuuuuu that you are. 🫶🏻
+
+Now goooooo and enjoy your dayyyyy... and haannnn, don't blush too much after reading all thissss😂
+
+Baaaaaaa bieeeeee bacchuuuuuu!!!!!💗
+
+— Ritisssssssss....
+
+`;
+
+
+let messageIndex = 0;
+
+
+/* =========================================================
+   OPEN MESSAGE
+========================================================= */
+
+function openMessage(){
+
+    showPage(
+        "messagePage"
+    );
+
+
+    messageIndex = 0;
+
+
+    document
+        .getElementById(
+            "typedMessage"
+        )
+        .innerHTML = "";
+
+
+    document
+        .getElementById(
+            "messageContinue"
+        )
+        .classList.add(
+            "hidden"
+        );
+
+
+    typeMessage();
+
+}
+
+
+/* =========================================================
+   TYPING EFFECT
+========================================================= */
+
+function typeMessage(){
+
+    if(
+        messageIndex <
+        personalMessage.length
+    ){
+
+        document
+            .getElementById(
+                "typedMessage"
+            )
+            .innerHTML +=
+                personalMessage.charAt(
+                    messageIndex
+                );
+
+
+        messageIndex++;
+
+
+        setTimeout(
+            typeMessage,
+            22
+        );
+
+    }
+
+    else{
+
+        document
+            .getElementById(
+                "messageContinue"
+            )
+            .classList.remove(
+                "hidden"
+            );
+
+    }
+
+}
+
+
+/* =========================================================
+   FINAL PAGE
+========================================================= */
+
+function openFinalPage(){
+
+    showPage(
+        "finalPage"
+    );
+
+}
+
+
+/* =========================================================
+   FINAL DON'T CLICK GAME
+========================================================= */
+
+let finalClicks = 0;
+
+
+const finalMessages = [
+
+    "I said na don't click 😁",
+
+    "Arehhhh plsss don't 😭",
+
+    "Nhi manoge aap...."
+
+];
+
+
+function finalClick(){
+
+    const button =
+        document.getElementById(
+            "finalButton"
+        );
+
+
+    finalClicks++;
+
+
+    /*
+       CLICK 1
+    */
+
+    if(
+        finalClicks === 1
+    ){
+
+        button.innerHTML =
+            finalMessages[0];
+
+        moveFinalButton();
+
+    }
+
+
+    /*
+       CLICK 2
+    */
+
+    else if(
+        finalClicks === 2
+    ){
+
+        button.innerHTML =
+            finalMessages[1];
+
+        moveFinalButton();
+
+    }
+
+
+    /*
+       CLICK 3
+    */
+
+    else if(
+        finalClicks === 3
+    ){
+
+        button.innerHTML =
+            finalMessages[2];
+
+        moveFinalButton();
+
+    }
+
+
+    /*
+       CLICK 4
+       FINAL
+    */
+
+    else{
+
+        button.innerHTML =
+            "Okieee bacchuuu 🫣";
+
+
+        button.style.transform =
+            "translate(0,0)";
+
+
+        document
+            .getElementById(
+                "finalResult"
+            )
+            .classList.add(
+                "show"
+            );
+
+
+        createConfetti();
+
+    }
+
+}
+
+
+/* =========================================================
+   MOVE FINAL BUTTON
+========================================================= */
+
+function moveFinalButton(){
+
+    const x =
+        Math.random() *
+        180 -
+        90;
+
+
+    const y =
+        Math.random() *
+        70 -
+        35;
+
+
+    const buttonMove =
+        `translate(${x}px,${y}px)`;
+
+
+    document
+        .getElementById(
+            "finalButton"
+        )
+        .style.transform =
+            buttonMove;
+
+}
+
+
+/* =========================================================
+   FINAL CONFETTI
+========================================================= */
+
+function createConfetti(){
+
+    const emojis = [
+
+        "🎉",
+        "🎊",
+        "🎈",
+        "🥳",
+        "✨",
+        "🎀"
+
+    ];
+
+
+    for(
+        let i=0;
+        i<30;
+        i++
+    ){
+
+        const item =
+            document.createElement(
+                "div"
+            );
+
+
+        item.innerHTML =
+            emojis[
+                Math.floor(
+                    Math.random() *
+                    emojis.length
+                )
+            ];
+
+
+        item.style.position =
+            "fixed";
+
+
+        item.style.left =
+            Math.random()*100
+            +
+            "%";
+
+
+        item.style.bottom =
+            "-30px";
+
+
+        item.style.fontSize =
+            (
+                20 +
+                Math.random()*25
+            )
+            +
+            "px";
+
+
+        item.style.zIndex =
+            "9999";
+
+
+        item.style.transition =
+            "transform 4s ease, opacity 4s ease";
+
+
+        document.body.appendChild(
+            item
+        );
+
+
+        setTimeout(
+            function(){
+
+                item.style.transform =
+                    "translateY(-100vh) rotate(360deg)";
+
+
+                item.style.opacity =
+                    "0";
+
+            },
+            100
+        );
+
+
+        setTimeout(
+            function(){
+
+                item.remove();
+
+            },
+            4500
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   INITIALIZE WALKING KITTY
+========================================================= */
+
+window.addEventListener(
+    "load",
+    function(){
+
+        /*
+           We don't prepare the canvas
+           until it is actually needed.
+        */
+
+    }
+);
+
+</script>
+
+</body>
+
+</html>
