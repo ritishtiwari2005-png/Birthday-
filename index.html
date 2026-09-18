@@ -2,22 +2,12 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0,
-               maximum-scale=1.0, user-scalable=no">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>🎀 A Little Birthday Surprise for Cutieeeee!!!!! 🎀</title>
 
-
 <style>
-
-/* =========================================================
-   RESET
-========================================================= */
-
+/* RESET */
 *{
     box-sizing:border-box;
     margin:0;
@@ -25,89 +15,816 @@
     -webkit-tap-highlight-color:transparent;
 }
 
-html,
-body{
+html, body{
     width:100%;
     height:100%;
     overflow:hidden;
 }
 
 body{
-    font-family:
-        "Segoe UI",
-        Arial,
-        sans-serif;
-
+    font-family: "Segoe UI", Arial, sans-serif;
     background:#fff5f8;
-
     color:#444;
 }
 
-
-/* =========================================================
-   FULL SCREEN PAGES
-========================================================= */
-
+/* FULL SCREEN PAGES */
 .page{
-
     position:fixed;
-
     inset:0;
-
     width:100vw;
     height:100vh;
-
     display:none;
-
     align-items:center;
     justify-content:center;
-
     padding:18px;
-
     overflow:hidden;
-
-    animation:
-        pageIn
-        .6s
-        ease;
-
+    animation: pageIn .6s ease;
 }
 
 .page.active{
     display:flex;
 }
 
-
 @keyframes pageIn{
-
-    from{
-        opacity:0;
-        transform:scale(.98);
-    }
-
-    to{
-        opacity:1;
-        transform:scale(1);
-    }
-
+    from{ opacity:0; transform:scale(.98); }
+    to{ opacity:1; transform:scale(1); }
 }
-
-
-/* =========================================================
-   HIDDEN
-========================================================= */
 
 .hidden{
     display:none !important;
 }
 
-
-/* =========================================================
-   GENERAL CARD
-========================================================= */
-
+/* GENERAL CARD */
 .card{
+    width:100%;
+    max-width:620px;
+    background: rgba(255,255,255,.96);
+    border-radius:30px;
+    padding:28px 20px;
+    text-align:center;
+    box-shadow: 0 20px 60px rgba(0,0,0,.12);
+}
 
+/* NORMAL KITTY */
+.kitty{
+    width: min(230px,65vw);
+    max-height:300px;
+    object-fit:contain;
+    filter: drop-shadow(0 12px 12px rgba(0,0,0,.12));
+}
+
+.floating-kitty{
+    animation: floatKitty 3s ease-in-out infinite;
+}
+
+@keyframes floatKitty{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(-10px); }
+}
+
+/* SPEECH BUBBLE */
+.speech{
+    background:#fff;
+    border: 2px solid #ffb5c9;
+    border-radius:22px;
+    padding:15px 19px;
+    margin:15px auto 20px;
+    max-width:470px;
+    color:#913451;
+    font-size:18px;
+    line-height:1.5;
+    box-shadow: 0 7px 20px rgba(0,0,0,.06);
+}
+
+/* BUTTON */
+.main-btn{
+    border:none;
+    background:#e75480;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    padding:13px 27px;
+    border-radius:30px;
+    cursor:pointer;
+    box-shadow: 0 8px 20px rgba(231,84,128,.25);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.main-btn:hover{ transform:scale(1.05); }
+.main-btn:active{ transform:scale(.96); }
+
+/* PASSWORD PAGE */
+#passwordPage{
+    background: radial-gradient(circle at top, #ffffff, #ffe9f1);
+}
+
+.poster{
+    width:225px;
+    margin: -5px auto 18px;
+    padding:14px;
+    background:Pink;
+    border: 3px solid #ffb5c9;
+    border-radius:16px;
+    transform:rotate(-2deg);
+    box-shadow: 0 10px 25px rgba(0,0,0,.10);
+}
+
+.poster h1{
+    color:#e75480;
+    font-size:28px;
+    line-height:1.1;
+}
+
+.poster p{
+    font-size:13px;
+    color:#777;
+    margin-top:6px;
+}
+
+.password-row{
+    display:flex;
+    gap:8px;
+    max-width:430px;
+    margin:auto;
+}
+
+.password-row input{
+    flex:1;
+    min-width:0;
+    padding:13px 18px;
+    border: 2px solid #ffd0dc;
+    border-radius:30px;
+    outline:none;
+    text-align:center;
+    font-size:16px;
+}
+
+.password-row input:focus{
+    border-color:#e75480;
+}
+
+.error{
+    min-height:30px;
+    margin-top:11px;
+    color:#e75480;
+    font-weight:bold;
+    font-size:16px;
+}
+
+/* FIREWORK PAGE */
+#fireworksPage{
+    background: radial-gradient(circle at center, #39395f, #11111f);
+    color:white;
+}
+
+.firework-title{
+    position:absolute;
+    top:40%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width:100%;
+    text-align:center;
+    z-index:10;
+    padding:15px;
+}
+
+.firework-title h1{
+    font-size: clamp(38px, 10vw, 75px);
+    text-shadow: 0 0 25px #ffb4cd;
+    animation: birthdayPulse 1s infinite;
+}
+
+.firework-title p{
+    margin-top:15px;
+    font-size:19px;
+}
+
+@keyframes birthdayPulse{
+    50%{ transform:scale(1.08); }
+}
+
+.firework{
+    position:absolute;
+    bottom:-20px;
+    width:5px;
+    height:5px;
+    border-radius:50%;
+    background:white;
+    box-shadow: 0 0 8px white;
+    animation: fireworkShoot 1.15s linear forwards;
+}
+
+@keyframes fireworkShoot{
+    0%{ transform:translateY(0); }
+    100%{ transform: translateY(-70vh); opacity:0; }
+}
+
+.explosion{
+    position:absolute;
+    width:6px;
+    height:6px;
+    border-radius:50%;
+    background:white;
+    animation: explode 1.1s ease-out forwards;
+}
+
+@keyframes explode{
+    0%{
+        opacity:1;
+        transform:scale(.5);
+        box-shadow: 0 0 8px white;
+    }
+    100%{
+        opacity:0;
+        transform:scale(1);
+        box-shadow:
+            0 -120px 0 #ff6b9a,
+            85px -85px 0 #ffd166,
+            120px 0 0 white,
+            85px 85px 0 #7bdff2,
+            0 120px 0 #ff6b9a,
+            -85px 85px 0 #ffd166,
+            -120px 0 0 white,
+            -85px -85px 0 #7bdff2;
+    }
+}
+
+/* KITTY WALK PAGE */
+#handsPage{
+    background: linear-gradient(135deg, #fff7fa, #ffeaf1);
+}
+
+.kitty-walk-screen{
+    width:100%;
+    height:100%;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
+
+.walking-kitty{
+    width: min(230px,60vw);
+    height:auto;
+    position:absolute;
+    left:-250px;
+    bottom:-30px;
+    object-fit:contain;
+    background:transparent;
+    filter: drop-shadow(0 12px 12px rgba(0,0,0,.12));
+    animation: kittyWalkFromCorner 4.5s cubic-bezier(.22,.61,.36,1) forwards;
+    pointer-events:none;
+}
+
+@keyframes kittyWalkFromCorner{
+    0%{ left:-250px; bottom:-30px; transform: rotate(-12deg) scale(.82); }
+    10%{ transform: rotate(10deg) scale(.86); }
+    20%{ transform: rotate(-9deg) scale(.90); }
+    30%{ transform: rotate(8deg) scale(.94); }
+    40%{ transform: rotate(-7deg) scale(.97); }
+    50%{ transform: rotate(6deg) scale(1); }
+    60%{ transform: rotate(-5deg) scale(1); }
+    70%{ transform: rotate(4deg) scale(1); }
+    82%{ transform: rotate(-2deg) scale(1); }
+    100%{ left:50%; bottom:44%; transform: translateX(-50%) rotate(0deg) scale(1); }
+}
+
+.walking-kitty.walking{
+    animation: kittyWalkBounce .38s ease-in-out infinite alternate;
+}
+
+@keyframes kittyWalkBounce{
+    from{ margin-bottom:0; }
+    to{ margin-bottom:8px; }
+}
+
+.walking-speech{
+    position:absolute;
+    bottom:19%;
+    width: min(90%,500px);
+    opacity:0;
+    transform: translateY(20px) scale(.95);
+    animation: speechAppear .8s ease 3.7s forwards;
+}
+
+@keyframes speechAppear{
+    from{ opacity:0; transform: translateY(20px) scale(.95); }
+    to{ opacity:1; transform: translateY(0) scale(1); }
+}
+
+.memory-choice{
+    position:absolute;
+    bottom:7%;
+    display:flex;
+    gap:12px;
+    opacity:0;
+    animation: choicesAppear .8s ease 4.7s forwards;
+}
+
+@keyframes choicesAppear{
+    from{ opacity:0; transform:translateY(15px); }
+    to{ opacity:1; transform:translateY(0); }
+}
+
+.choice-btn{
+    border:none;
+    padding: 12px 26px;
+    border-radius:30px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.yes-btn{
+    background:#e75480;
+    color:white;
+    box-shadow: 0 7px 20px rgba(231,84,128,.22);
+}
+
+.no-btn{
+    background:white;
+    color:#e75480;
+    border: 2px solid #e75480;
+    position:relative;
+    transition: transform .25s ease;
+}
+
+.paw{
+    position:absolute;
+    font-size:25px;
+    opacity:0;
+    animation: pawPop 1.5s ease-in-out infinite;
+}
+
+.paw1{ left:16%; bottom:21%; }
+.paw2{ left:24%; bottom:16%; animation-delay:.5s; }
+
+@keyframes pawPop{
+    0%,100%{ opacity:0; transform: translateY(0); }
+    50%{ opacity:.7; transform: translateY(-8px); }
+}
+
+/* PHOTO PAGE */
+#photoPage{
+    background: linear-gradient(135deg, #fff7fa, #f7f0ff);
+}
+
+.photo-wrapper{
+    width:100%;
+    max-width:700px;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+.photo-title{
+    color:#e75480;
+    margin-bottom:10px;
+    font-size:24px;
+}
+
+.photo-card{
+    width:100%;
+    max-height: calc(100vh - 145px);
+    background:white;
+    border-radius:25px;
+    padding:10px;
+    box-shadow: 0 15px 45px rgba(0,0,0,.12);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.story-image{
+    width:100%;
+    max-height:55vh;
+    object-fit:contain;
+    border-radius:18px;
+    background:#f5f5f5;
+}
+
+.photo-enter{
+    animation: photoCuteEnter .65s cubic-bezier(.22,.61,.36,1);
+}
+
+@keyframes photoCuteEnter{
+    0%{ opacity:0; transform: scale(.88) rotate(-2deg) translateY(12px); }
+    45%{ opacity:1; transform: scale(1.03) rotate(1deg) translateY(-3px); }
+    100%{ opacity:1; transform: scale(1) rotate(0) translateY(0); }
+}
+
+.caption{
+    margin-top:10px;
+    padding:12px;
+    background:#fff2f6;
+    border-radius:16px;
+    color:#913451;
+    font-size:16px;
+    line-height:1.4;
+}
+
+.story-bottom{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin-top:9px;
+}
+
+.story-speech{
+    font-size:14px;
+    color:#913451;
+    margin-bottom:8px;
+    text-align:center;
+}
+
+.story-buttons{
+    display:flex;
+    gap:10px;
+}
+
+.story-buttons button{
+    border:none;
+    background:#e75480;
+    color:white;
+    border-radius:25px;
+    padding:10px 22px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* MESSAGE PAGES */
+#messageIntroPage, #messagePage{
+    background: linear-gradient(135deg, #fff8fb, #f8efff);
+}
+
+.message-card{
+    max-width:750px;
+    max-height: calc(100vh - 36px);
+    overflow-y:auto;
+}
+
+.message-card::-webkit-scrollbar{
+    width:5px;
+}
+
+.message-paper{
+    margin-top:15px;
+    background:#fff;
+    border-radius:20px;
+    padding:28px;
+    text-align:left;
+    box-shadow: inset 0 0 0 1px #f1dce4;
+}
+
+.typed-message{
+    font-size:17px;
+    line-height:1.8;
+    white-space:pre-line;
+}
+
+.continue-btn{
+    margin-top:20px;
+}
+
+/* FINAL PAGE */
+#finalPage{
+    background: linear-gradient(135deg, #fff7fa, #f4edff);
+}
+
+.final-card{
+    max-width:620px;
+}
+
+.final-button-area{
+    height:130px;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.final-btn{
+    border:none;
+    border-radius:30px;
+    background:#e75480;
+    color:white;
+    padding:14px 25px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    transition: transform .35s ease;
+}
+
+.final-result{
+    display:none;
+}
+
+.final-result.show{
+    display:block;
+    animation: pageIn .8s ease;
+}
+
+.final-result h2{
+    color:#e75480;
+    margin-bottom:15px;
+}
+
+.final-result p{
+    font-size:17px;
+    line-height:1.7;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+    .page{ padding:12px; }
+    .card{ padding: 21px 14px; border-radius:25px; }
+    .kitty{ width: min(200px,62vw); }
+    .poster{ width:205px; }
+    .speech{ font-size:16px; padding: 13px 15px; }
+    .password-row{ flex-direction:column; }
+    .password-row button{ width:100%; }
+    .walking-kitty{ width: min(205px,58vw); }
+    .walking-speech{ bottom:19%; }
+    .memory-choice{ bottom:6%; }
+    .choice-btn{ padding: 11px 22px; }
+    .photo-title{ font-size:20px; }
+    .photo-card{ max-height: calc(100vh - 125px); }
+    .story-image{ max-height:47vh; }
+    .caption{ font-size:14px; padding:9px; }
+    .story-speech{ font-size:13px; }
+    .story-buttons button{ padding: 9px 18px; }
+    .message-paper{ padding:20px; }
+    .typed-message{ font-size:15px; line-height:1.7; }
+    .final-result p{ font-size:15px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- 1. PASSWORD PAGE -->
+<section id="passwordPage" class="page active">
+    <div class="card">
+        <img src="kitty.jfif" class="kitty floating-kitty" alt="Cute Kitty">
+        <div class="poster">
+            <h1>🎀 HAPPY<br>BIRTHDAY Betuuuuuuuuu!!!!! 🎂</h1>
+            <p>A little surprise is waiting for youuuuuuuuu...</p>
+        </div>
+        <div class="speech">
+            Hmmm you are here... 👀<br>
+            Something special is waiting for you meri baccchhuuuuu!!!!...<br><br>
+            But first...<br>
+            <b>Enter your password (hehehehehehehe) 🔐</b>
+        </div>
+        <div class="password-row">
+            <input id="passwordInput" type="password" placeholder="Enter password" autocomplete="off">
+            <button class="main-btn" onclick="checkPassword()">Enter 🔐</button>
+        </div>
+        <div id="passwordError" class="error"></div>
+    </div>
+</section>
+
+<!-- 2. FIREWORKS PAGE -->
+<section id="fireworksPage" class="page">
+    <div class="firework-title">
+        <h1>🎉 HAPPY BIRTHDAY PIYUUUUUUUUUUUU !!!!! 🎉</h1>
+        <p>YAYYYYYYYYYYYYYY!!!!! 🥳</p>
+    </div>
+</section>
+
+<!-- 3. KITTY WALKS FROM CORNER -->
+<section id="handsPage" class="page">
+    <div class="kitty-walk-screen">
+        <span class="paw paw1">🐾</span>
+        <span class="paw paw2">🐾</span>
+        <canvas id="walkingKittyCanvas" class="walking-kitty"></canvas>
+        <div class="walking-speech speech">
+            Hiiiiii Bacchhhuuuuu!!!!... 🎀<br><br>
+            Come hereee give me your hands...<br>
+            Wanna see some memories of a cutieeeee ? 🥹
+        </div>
+        <div class="memory-choice">
+            <button class="choice-btn yes-btn" onclick="chooseYes()">YES 🥹</button>
+            <button class="choice-btn no-btn" id="noButton" onclick="runAwayNo()">NO 😐</button>
+        </div>
+    </div>
+</section>
+
+<!-- 4. PHOTO STORY -->
+<section id="photoPage" class="page">
+    <div class="photo-wrapper">
+        <h2 class="photo-title">📖 Little Memory Story</h2>
+        <div class="photo-card">
+            <img id="storyImage" class="story-image" src="Image 1.jpg" alt="Memory">
+            <div id="storyCaption" class="caption"></div>
+        </div>
+        <div class="story-bottom">
+            <div id="storySpeech" class="story-speech"></div>
+            <div class="story-buttons">
+                <button onclick="previousPhoto()">← Back</button>
+                <button onclick="nextPhoto()">Next →</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 5. MESSAGE INTRO -->
+<section id="messageIntroPage" class="page">
+    <div class="card">
+        <img src="kitty.jfif" class="kitty floating-kitty" alt="Kitty">
+        <div class="speech">
+            Awwwwwwww... 🥹<br><br>
+            We have seen all the memories!<br><br>
+            Now let's go to see...<br>
+            <b>the message from your one n only bestest friend Ritisssssssss... 👀</b>
+        </div>
+        <button class="main-btn" onclick="openMessage()">Let's Go 🎀</button>
+    </div>
+</section>
+
+<!-- 6. MESSAGE PAGE -->
+<section id="messagePage" class="page">
+    <div class="card message-card">
+        <img src="kitty.jfif" class="kitty" style="width:130px;" alt="Kitty">
+        <div class="speech">
+            Okieeeeeeee...<br>
+            Ritissssssss has something to say......
+        </div>
+        <div class="message-paper">
+            <div id="typedMessage" class="typed-message"></div>
+        </div>
+        <button id="messageContinue" class="main-btn continue-btn hidden" onclick="openFinalPage()">One Last Surpriseeeeeee 🎁</button>
+    </div>
+</section>
+
+<!-- 7. FINAL SURPRISE -->
+<section id="finalPage" class="page">
+    <div class="card final-card">
+        <img src="kitty.jfif" class="kitty" style="width:150px;" alt="Kitty">
+        <h2 style="color:#e75480; margin-top:10px;">🎁 One Last Surpriseeeeee</h2>
+        <div class="speech">
+            There's one last thing...<br><br>
+            But but but but Don't click haannnnnnn...<br>
+            <b>Don't click it. 👀</b>
+        </div>
+        <div class="final-button-area">
+            <button id="finalButton" class="final-btn" onclick="finalClick()">Don't Click This 👀</button>
+        </div>
+        <div id="finalResult" class="final-result">
+            <h2>Okieee bacchuuuuuuuuu!!!! 🫣</h2>
+            <p>
+                Fineeee! 😂<br><br>
+                Mmmmm.... toh yr chhotu sa Birthday message end ho gya...🥹<br><br>
+                I hope this little surprise made you smile and gave you some really nice memories.<br><br>
+                Wishing you a year full of happiness, success, laughter and lots of amazing moments (With me also).<br><br>
+                Keep being the same Cutieeeeee bacchhuuuu you are. 😂<br><br>
+                Okieeeeee baccchhuuuuuuuu!!!!!<br>
+                We already have enough boring people in the world (For Eg ME). 😭<br><br>
+                Have an absolutely amazing birthday Betuuuuuuu! 🎂🥳<br><br>
+                Ofocurse ham milne wale hai toh acchhaaa hi hoga. 😂<br><br>
+                🎀✨🎉<br><br>
+                <b>Happy Birthday once again!!!!!!</b>
+            </p>
+        </div>
+    </div>
+</section>
+
+<script>
+function showPage(pageId){
+    document.querySelectorAll(".page").forEach(function(page){
+        page.classList.remove("active");
+    });
+    document.getElementById(pageId).classList.add("active");
+}
+
+const correctPassword = "20092005";
+let wrongAttempts = 0;
+const wrongMessages = [
+    "Kyaa yaarr bacchchu... 🥺",
+    "Arehhhhh!!!! 😭",
+    "Reallyyyyyy piyuuuuu!!!! 😭"
+];
+
+function checkPassword(){
+    const input = document.getElementById("passwordInput");
+    const error = document.getElementById("passwordError");
+
+    if(input.value === correctPassword){
+        error.innerHTML = "Good Gurllllll! 🎉";
+        input.disabled = true;
+        startFireworks();
+    } else {
+        wrongAttempts++;
+        if(wrongAttempts <= 3){
+            error.innerHTML = wrongMessages[wrongAttempts - 1];
+        } else {
+            error.innerHTML = "Bas bas... ab sahi password daalo 😂🥺";
+        }
+        input.value = "";
+        input.focus();
+    }
+}
+
+document.getElementById("passwordInput").addEventListener("keydown", function(e){
+    if(e.key === "Enter"){
+        checkPassword();
+    }
+});
+
+function startFireworks(){
+    showPage("fireworksPage");
+    const rocketTimer = setInterval(launchFirework, 300);
+
+    setTimeout(function(){
+        clearInterval(rocketTimer);
+        showPage("handsPage");
+        prepareWalkingKitty();
+    }, 10000);
+}
+
+function launchFirework(){
+    const page = document.getElementById("fireworksPage");
+    const firework = document.createElement("div");
+    firework.className = "firework";
+    firework.style.left = (8 + Math.random()*84) + "%";
+    page.appendChild(firework);
+
+    setTimeout(function(){
+        const rect = firework.getBoundingClientRect();
+        createExplosion(rect.left, rect.top);
+        firework.remove();
+    }, 1050);
+}
+
+function createExplosion(x, y){
+    const page = document.getElementById("fireworksPage");
+    const explosion = document.createElement("div");
+    explosion.className = "explosion";
+    explosion.style.left = x + "px";
+    explosion.style.top = y + "px";
+    page.appendChild(explosion);
+
+    setTimeout(function(){
+        explosion.remove();
+    }, 1400);
+}
+
+let kittyCanvasReady = false;
+
+function prepareWalkingKitty(){
+    const canvas = document.getElementById("walkingKittyCanvas");
+    const ctx = canvas.getContext("2d");
+    const img = new Image();
+
+    img.onload = function(){
+        const maxWidth = window.innerWidth <= 600 ? 205 : 230;
+        const ratio = img.height / img.width;
+        const width = Math.min(maxWidth, window.innerWidth * .60);
+        const height = width * ratio;
+
+        canvas.width = width;
+        canvas.height = height;
+
+        ctx.clearRect(0, 0, width, height);
+        ctx.drawImage(img, 0, 0, width, height);
+
+        const imageData = ctx.getImageData(0, 0, width, height);
+        const data = imageData.data;
+
+        for(let i = 0; i < data.length; i += 4){
+            const r = data[i];
+            const g = data[i + 1];
+            const b = data[i + 2];
+
+            const isPinkBackground = r > 220 && g > 150 && g < 225 && b > 160 && b < 225 && r > g + 20;
+            if(isPinkBackground){
+                data[i + 3] = 0;
+            }
+        }
+
+        ctx.putImageData(imageData, 0, 0);
+        kittyCanvasReady = true;
+
+        setTimeout(function(){
+            canvas.classList.add("walking");
+        }, 4500);
+    };
+
+    img.src = "kitty.jfif";
+}
+
+function chooseYes(){
+    showPage("photoPage");
+    currentPhoto = 1;
+    showPhoto();
+}
+
+function runAwayNo(){
+    const button = document.getElementById("noButton");
+    const maxX = Math.min(150, window.in
     width:100%;
     max-width:620px;
 
